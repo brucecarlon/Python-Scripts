@@ -1,10 +1,3 @@
-'''
-This prgram checks if the user input is a palindrome.
-Palindrome
-03 June 2021
-Bruce Mvubele
-'''
-
 USER_INPUT = input('Enter a string:\n')
 
 def IsPalindrome(string):
@@ -18,12 +11,9 @@ def IsPalindrome(string):
     -------
     Reversed version of input :  str 
     '''
+
     if len(string) != 1:
-        # Everytime function is called it slices first element of string until
-        # base case is met (len(string) = 1) it then unpacks. taking the first 
-        # element from the previous call and adds it to reverse variable
         reverse = IsPalindrome(string[1:]) + string[0]
-        #print(f'string ={string}, reverse ={reverse}')
         return reverse
     else:
         return string
@@ -38,3 +28,14 @@ def main():
         
 if __name__ == '__main__':
     main()
+
+
+
+
+    # Let the isPalindrome function be denoted by f(string)
+    # string = 'cake'
+    # reverse = f(ake) + c
+    #         = f(f(ke) + a) +c
+    #         = f(f(f(e)+ k ) + a) + c
+    #         = e+k+a+c = ekac
+    #
