@@ -4,12 +4,7 @@ class Node:
         self.next = next
 
 class SingleLink_list:
-    '''
-    #add
-    #remove
-    #print
-    #search
-    '''
+    
     def __init__(self) -> None:
         self. head = None
  
@@ -26,7 +21,7 @@ class SingleLink_list:
         index_ = 0
 
         if self.head is None:
-            print('Linked list is empty')
+            print(f'{data} not found. List is empty')
             return
 
         while curr_node:
@@ -55,8 +50,6 @@ class SingleLink_list:
 
         print(f'Length {index_}')
         return
-
-
 
     def append(self,data):
         '''
@@ -113,20 +106,13 @@ if __name__ == '__main__':
     ll = SingleLink_list()
     ll.length()
     ll.search(0)
-    #ll.add(555,0)
-    #ll.insert(555,3)
     ll.prepend(5)
     ll.length()
     ll.append(6)
     ll.search(6)
     ll.prepend(456)
-    #ll.add(1,1)
     ll.append(9999)
     ll.search(9999)
-    ll.insert(444,2)
     ll.search(77)
     ll.length()
-    
-    
-    #ll.insert_after_node(6,7777)
     ll.print()
