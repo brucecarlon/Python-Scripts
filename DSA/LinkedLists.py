@@ -15,9 +15,11 @@ class SingleLink_list:
  
     def print(self):
         curr_node = self.head
-        while curr_node != None:
-            print(f'{curr_node.data}--> ')
+        s_list =''
+        while curr_node:
+            s_list = s_list + str(curr_node.data)+'-->'
             curr_node = curr_node.next
+        print(s_list)
 
     def search(self,data):
         curr_node = self.head
@@ -37,7 +39,6 @@ class SingleLink_list:
             if curr_node.data == data:
                 print(f'{data} is at index {index_}')
                 return
-            
         print(f'{data} not in list')
         return
     
@@ -79,12 +80,41 @@ class SingleLink_list:
         self.head = new_node
         #curr_node.next = last_node
 
+    def insert(self, data, position):
+        new_node = Node(data)
+        if self.head is None or position== 0:
+            self.head =  new_node
+
+        index_count = 0
+        curr_node = self.head
+
+        while curr_node:
+            if position != index_count +1:
+                curr_node = curr_node.next
+                index_count += 1
+            if position == index_count +1:
+                curr_node.next = new_node
+                new_node.next = curr_node.next
+                return
+
+    def pop(self):
+        '''
+        Removes last item in list
+        '''
+
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next
+        last_node = None
+        return
+
 
 if __name__ == '__main__':
     ll = SingleLink_list()
     ll.length()
     ll.search(0)
     #ll.add(555,0)
+    #ll.insert(555,3)
     ll.prepend(5)
     ll.length()
     ll.append(6)
@@ -93,7 +123,10 @@ if __name__ == '__main__':
     #ll.add(1,1)
     ll.append(9999)
     ll.search(9999)
+    ll.insert(444,2)
     ll.search(77)
     ll.length()
+    
+    
     #ll.insert_after_node(6,7777)
     ll.print()
