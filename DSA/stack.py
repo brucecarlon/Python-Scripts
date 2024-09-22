@@ -26,7 +26,7 @@ class stack(llist):
     def peek(self):
         '''
         Viewss top Node'''
-        print(self. head)
+        print(self.head.data)
         return
 
 if __name__ == '__main__':
@@ -42,6 +42,6 @@ if __name__ == '__main__':
     st.pop()
     st.pop()
 
-    st.print()
+    #st.print()
     
        

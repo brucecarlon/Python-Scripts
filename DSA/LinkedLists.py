@@ -49,7 +49,7 @@ class SingleLink_list:
             index_ += 1
 
         print(f'Length {index_}')
-        return
+        return index_
 
     def append(self,data):
         '''
@@ -101,6 +101,23 @@ class SingleLink_list:
         last_node = None
         return
 
+    def erase(self, index):
+        curr_node = self.head
+        list_length = self.length()
+        count= 0
+        
+        if index > list_length:
+            print('invalid index') #raise expection
+            return
+
+        while True:
+            last_node = curr_node
+            curr_node = curr_node.next
+            if count == index:
+                last_node.next = curr_node.next
+                return
+            count +=1
+
 
 if __name__ == '__main__':
     ll = SingleLink_list()
@@ -115,4 +132,6 @@ if __name__ == '__main__':
     ll.search(9999)
     ll.search(77)
     ll.length()
+    ll.print()
+    ll.erase(2)
     ll.print()
