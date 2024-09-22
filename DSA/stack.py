@@ -1,8 +1,8 @@
 
-import llist
-from llist import *
+from LinkedLists import SingleLink_list
 
-class stack(llist):
+
+class stack(SingleLink_list):
     def __init__(self):
         super().__init__()
     def add(self,data):
@@ -39,8 +39,8 @@ if __name__ == '__main__':
     st.add('infinity')
     st.print()
     st.peek()
-    st.pop()
-    st.pop()
+
+    st.search('far')
 
     #st.print()
     
